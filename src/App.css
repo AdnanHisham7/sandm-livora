@@ -1,0 +1,62 @@
+
+.gradient-bg {
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+}
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.category-pill {
+  position: relative;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #ffffff00, #f1f5f900);
+  border: 0.1px solid rgb(184, 184, 184);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+}
+.category-pill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #eaf9f056, #beffd85c);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50px;
+}
+.category-pill:hover::before {
+  opacity: 1;
+}
+.category-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+.category-pill span {
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+.breadcrumb-item:not(:last-child)::after {
+  content: "→";
+  margin: 0 12px;
+  color: #94a3b8;
+}
